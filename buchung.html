@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jetzt Fahrt online buchen - Fahrservice Friedrich. Einfach, schnell und zuverlässig.">
+    <title>Online buchen - Fahrservice Friedrich</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Fahrservice <span>Friedrich</span></a>
+            <button class="mobile-menu-toggle" aria-label="Menü öffnen">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="buchung.html" class="active">Online buchen</a></li>
+                <li><a href="agb.html">AGB</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="section-title">
+                <h1>Jetzt Fahrt buchen</h1>
+                <p>Füllen Sie das Formular aus und wir melden uns umgehend bei Ihnen.</p>
+            </div>
+
+            <div class="booking-form">
+                <form id="bookingForm" action="#" method="POST">
+                    <!-- Persönliche Daten -->
+                    <div class="card">
+                        <h3>Persönliche Daten</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vorname">Vorname <span class="required">*</span></label>
+                                <input type="text" id="vorname" name="vorname" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nachname">Nachname <span class="required">*</span></label>
+                                <input type="text" id="nachname" name="nachname" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefon">Telefon <span class="required">*</span></label>
+                                <input type="tel" id="telefon" name="telefon" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fahrtdetails -->
+                    <div class="card">
+                        <h3>Fahrtdetails</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="abholdatum">Abholdatum <span class="required">*</span></label>
+                                <input type="date" id="abholdatum" name="abholdatum" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="abholzeit">Abholzeit <span class="required">*</span></label>
+                                <input type="time" id="abholzeit" name="abholzeit" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="abholort">Abholort <span class="required">*</span></label>
+                            <input type="text" id="abholort" name="abholort" class="form-control" placeholder="Straße, Hausnummer, PLZ, Ort" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="zielort">Zielort <span class="required">*</span></label>
+                            <select id="zielort" name="zielort" class="form-control" required>
+                                <option value="">Bitte wählen...</option>
+                                <option value="Frankfurt Flughafen">Frankfurt Flughafen</option>
+                                <option value="Frankfurt Hauptbahnhof">Frankfurt Hauptbahnhof</option>
+                                <option value="Frankfurt City">Frankfurt City</option>
+                                <option value="Wiesbaden">Wiesbaden</option>
+                                <option value="Mainz">Mainz</option>
+                                <option value="Darmstadt">Darmstadt</option>
+                                <option value="Hahn Flughafen">Hahn Flughafen</option>
+                                <option value="sonstiges">Anderer Zielort (bitte in Bemerkungen angeben)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fahrgaeste">Anzahl Fahrgäste</label>
+                                <select id="fahrgaeste" name="fahrgaeste" class="form-control">
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 Personen</option>
+                                    <option value="3">3 Personen</option>
+                                    <option value="4">4 Personen</option>
+                                    <option value="5">5 Personen</option>
+                                    <option value="6">6 Personen</option>
+                                    <option value="7">7 Personen</option>
+                                    <option value="8">8 Personen</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gepaeck">Gepäck</label>
+                                <select id="gepaeck" name="gepaeck" class="form-control">
+                                    <option value="normal">Normales Reisegepäck</option>
+                                    <option value="viel">Viel Gepäck (mehr als 1 Koffer pro Person)</option>
+                                    <option value="sperr">Sperrgepäck (Ski, Golf etc.)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fahrtrichtung">Fahrtrichtung</label>
+                            <select id="fahrtrichtung" name="fahrtrichtung" class="form-control">
+                                <option value="einfach">Einfache Fahrt (Hin)</option>
+                                <option value="hinrueck">Hin- und Rückfahrt</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="rueckfahrtGroup" style="display: none;">
+                            <label for="rueckfahrt_datum">Datum Rückfahrt</label>
+                            <input type="date" id="rueckfahrt_datum" name="rueckfahrt_datum" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- Bemerkungen -->
+                    <div class="card">
+                        <h3>Bemerkungen</h3>
+                        <div class="form-group">
+                            <label for="bemerkungen">Besondere Wünsche oder Hinweise</label>
+                            <textarea id="bemerkungen" name="bemerkungen" class="form-control" placeholder="z.B. Kinderseat benötigt, Rollstuhl, Treffpunkt am Flughafen Terminal 1 etc."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Preisanzeige (dezent) -->
+                    <div class="price-display" id="priceDisplay" style="display: none;">
+                        <div class="price-amount" id="priceAmount">-- €</div>
+                        <div class="price-note">Geschätzter Preis - Endpreis nach Bestätigung</div>
+                    </div>
+
+                    <!-- Datenschutz -->
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="datenschutz" required style="margin-top: 0.3rem;">
+                            <span>Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. <span class="required">*</span></span>
+                        </label>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-weight: normal; cursor: pointer;">
+                            <input type="checkbox" name="agb" required style="margin-top: 0.3rem;">
+                            <span>Ich akzeptiere die <a href="agb.html" target="_blank">AGB</a> und <a href="beforderungsbedingungen.html" target="_blank">Beförderungsbedingungen</a>. <span class="required">*</span></span>
+                        </label>
+                    </div>
+
+                    <!-- Spam Hinweis -->
+                    <div class="spam-notice">
+                        <strong>⚠️ Wichtig:</strong> Bitte prüfen Sie nach dem Absenden Ihren Spam-Ordner. Unsere Bestätigungsmail könnte dort landen.
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">Fahrt anfragen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="avv.html">AVV</a>
+                <a href="beforderungsbedingungen.html">Beförderungsbedingungen</a>
+            </div>
+            <p>&copy; 2026 Fahrservice Friedrich. Alle Rechte vorbehalten.</p>
+            <p class="credits">Diese Webseite wurde erstellt von: <a href="https://da-marketing.de" target="_blank" rel="noopener">Da-Marketing</a></p>
+        </div>
+    </footer>
+
+    <script src="js/cookie-banner.js"></script>
+    <script src="js/buchung.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Hin- und Rückfahrt Logik
+        document.getElementById('fahrtrichtung').addEventListener('change', function() {
+            const rueckfahrtGroup = document.getElementById('rueckfahrtGroup');
+            if (this.value === 'hinrueck') {
+                rueckfahrtGroup.style.display = 'block';
+                document.getElementById('rueckfahrt_datum').required = true;
+            } else {
+                rueckfahrtGroup.style.display = 'none';
+                document.getElementById('rueckfahrt_datum').required = false;
+            }
+        });
+    </script>
+</body>
+</html>
